@@ -71,7 +71,10 @@ app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 
 // Run Server
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log("Server is running on ", PORT);
+//change code for fly.io
+const PORT = process.env.PORT || 3000;
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });
